@@ -1,0 +1,371 @@
+{
+  "info": {
+    "_collection_link": "https://go.postman.co/collection/56388962-a5db40bb-061b-47e8-90f4-e88b7352cae2?source=collection_link",
+    "_exporter_id": "56388962",
+    "_postman_id": "a5db40bb-061b-47e8-90f4-e88b7352cae2",
+    "name": "Autenticacion",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "item": [
+        {
+          "name": "http://localhost:8080/api/categorias",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "categorias"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/categorias"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "header": [],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "categorias",
+                "1"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/categorias/1"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{token}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n  \"nombre\": \"Tecnología\",\r\n  \"descripcion\": \"Productos tecnológicos\"\r\n}"
+            },
+            "header": [],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "categorias",
+                "4"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/categorias/4"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{token}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n  \"nombre\": \"Electronica\",\r\n  \"descripcion\": \"Productos electronicos\"\r\n}"
+            },
+            "header": [],
+            "method": "POST",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "categorias"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/categorias"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "categorias"
+    },
+    {
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{token}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "1"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/productos/1"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{token}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n  \"nombre\": \"Teclado mecanico\",\r\n  \"descripcion\": \"Teclado RGB\",\r\n  \"precio\": 15000,\r\n  \"cantidadStock\": 10,\r\n  \"categoria\": {\r\n    \"id\": 2\r\n  }\r\n}"
+            },
+            "header": [],
+            "method": "POST",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "productos"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/productos"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get de producto",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{token}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "header": [],
+            "method": "GET",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "productos"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/productos"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actulizar de product",
+          "request": {
+            "auth": {
+              "bearer": [
+                {
+                  "key": "token",
+                  "type": "string",
+                  "value": "{{token}}"
+                }
+              ],
+              "type": "bearer"
+            },
+            "body": {
+              "mode": "raw",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              },
+              "raw": "{\r\n  \"nombre\": \"Teclado Gamer\",\r\n  \"descripcion\": \"Teclado actualizado\",\r\n  \"precio\": 20000,\r\n  \"cantidadStock\": 15,\r\n  \"categoria\": {\r\n    \"id\": 2\r\n  }\r\n}"
+            },
+            "header": [],
+            "method": "PUT",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "2"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/productos/2"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete prodcut",
+          "request": {
+            "header": [],
+            "method": "DELETE",
+            "url": {
+              "host": [
+                "localhost"
+              ],
+              "path": [
+                "api",
+                "productos",
+                "1"
+              ],
+              "port": "8080",
+              "protocol": "http",
+              "raw": "http://localhost:8080/api/productos/1"
+            }
+          },
+          "response": []
+        }
+      ],
+      "name": "Productos"
+    },
+    {
+      "name": "http://localhost:8080/api/categorias",
+      "request": {
+        "auth": {
+          "basic": [
+            {
+              "key": "username",
+              "type": "string",
+              "value": "user"
+            },
+            {
+              "key": "password",
+              "type": "string",
+              "value": "{{auth_password_0exl}}"
+            }
+          ],
+          "type": "basic"
+        },
+        "body": {
+          "mode": "raw",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          },
+          "raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"Admin123!\"\r\n}"
+        },
+        "header": [],
+        "method": "POST",
+        "url": {
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "raw": "http://localhost:8080/api/auth/login"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "post de product",
+      "request": {
+        "header": [],
+        "method": "POST",
+        "url": {
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "raw": "http://localhost:8080/api/auth/login"
+        }
+      },
+      "response": []
+    }
+  ]
+}
