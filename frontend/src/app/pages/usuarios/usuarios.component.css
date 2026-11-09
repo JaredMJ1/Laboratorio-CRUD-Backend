@@ -1,0 +1,332 @@
+
+.usuarios-container {
+  padding: 30px;
+  color: #e5e7eb;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  color: #f9fafb;
+}
+
+.page-header p {
+  margin: 0;
+  color: #9ca3af;
+}
+
+.stats-card,
+.form-card,
+.table-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.stats-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 260px;
+}
+
+.stats-card span {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.stats-card h2 {
+  margin: 8px 0 0;
+  font-size: 30px;
+  color: #f8fafc;
+}
+
+.stats-icon {
+  font-size: 30px;
+}
+
+.form-header,
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-header h2,
+.table-header h2 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 19px;
+}
+
+.table-header span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-edit,
+.btn-delete,
+.btn-close {
+  border: none;
+  border-radius: 7px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #475569;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #64748b;
+}
+
+.btn-close {
+  background: transparent;
+  color: #94a3b8;
+  font-size: 24px;
+  padding: 0 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  border-radius: 7px;
+  padding: 12px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #3b82f6;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background: #0f172a;
+}
+
+th,
+td {
+  padding: 15px;
+  border-bottom: 1px solid #334155;
+}
+
+th {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+td {
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.username {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.role-badge {
+  display: inline-block;
+  background: #1e3a8a;
+  color: #bfdbfe;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit {
+  background: #854d0e;
+  color: #fef3c7;
+  padding: 7px 12px;
+}
+
+.btn-edit:hover {
+  background: #a16207;
+}
+
+.btn-delete {
+  background: #991b1b;
+  color: #fee2e2;
+  padding: 7px 12px;
+}
+
+.btn-delete:hover {
+  background: #b91c1c;
+}
+
+.alert {
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.success {
+  background: #14532d;
+  color: #bbf7d0;
+}
+
+.error {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 25px;
+  color: #94a3b8;
+}
+
+@media (max-width: 700px) {
+  .usuarios-container {
+    padding: 15px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .stats-card {
+    max-width: none;
+  }
+}
+
+
+/* Fondo blanco para las tarjetas */
+.stats-card,
+.form-card,
+.table-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Textos */
+.page-header h1,
+.stats-card h2,
+.form-header h2,
+.table-header h2 {
+  color: #1e293b;
+}
+
+.page-header p,
+.stats-card span,
+.table-header span {
+  color: #64748b;
+}
+
+/* Tabla */
+thead {
+  background: #f1f5f9;
+}
+
+th {
+  color: #475569;
+}
+
+td {
+  color: #334155;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.username {
+  color: #1e293b;
+}
+
+/* Campos del formulario */
+.form-group label {
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+}
+
+/* Botón de cerrar formulario */
+.btn-close {
+  color: #64748b;
+}
+
+/* Mensaje cuando no hay usuarios */
+.loading,
+.empty {
+  color: #64748b;
+}

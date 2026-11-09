@@ -78,5 +78,4 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    //alt+ins (recordatorio mio)
 }

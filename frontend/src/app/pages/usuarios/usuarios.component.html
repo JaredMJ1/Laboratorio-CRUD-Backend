@@ -1,0 +1,146 @@
+<div class="usuarios-container">
+
+  <div class="page-header">
+    <div>
+      <h1>Gestión de usuarios</h1>
+      <p>Administra los usuarios y sus permisos dentro del sistema.</p>
+    </div>
+
+    <button
+    *ngIf="authService.esAdministrador()"
+    class="btn-primary"
+    (click)="nuevoUsuario()">
+    + Nuevo usuario
+    </button>
+  </div>
+
+  <div class="stats-card">
+    <div>
+      <span>Total de usuarios</span>
+      <h2>{{ usuarios.length }}</h2>
+    </div>
+    <div class="stats-icon"></div>
+  </div>
+
+  <div class="alert success" *ngIf="mensaje">
+    {{ mensaje }}
+  </div>
+
+  <div class="alert error" *ngIf="error">
+    {{ error }}
+  </div>
+
+  <div class="form-card"
+     *ngIf="mostrarFormulario && authService.esAdministrador()">
+
+    <div class="form-header">
+      <h2>{{ modoEdicion ? 'Editar usuario' : 'Crear usuario' }}</h2>
+      <button class="btn-close" (click)="limpiarFormulario()">×</button>
+    </div>
+
+    <form (ngSubmit)="guardarUsuario()">
+
+      <div class="form-group">
+        <label>Nombre de usuario</label>
+        <input
+          type="text"
+          name="username"
+          [(ngModel)]="usuario.username"
+          placeholder="Ingrese el nombre de usuario"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label>
+          {{ modoEdicion ? 'Nueva contraseña (opcional)' : 'Contraseña' }}
+        </label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="usuario.password"
+          placeholder="Ingrese la contraseña"
+          [required]="!modoEdicion">
+      </div>
+
+      <div class="form-group">
+        <label>Rol</label>
+        <select
+          name="rol"
+          [(ngModel)]="usuario.rol"
+          required>
+          <option value="" disabled>Seleccione un rol</option>
+          <option *ngFor="let rol of roles" [value]="rol.nombre">
+            {{ rol.nombre }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-secondary"
+          (click)="limpiarFormulario()">
+          Cancelar
+        </button>
+
+        <button type="submit" class="btn-primary">
+          {{ modoEdicion ? 'Guardar cambios' : 'Crear usuario' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Tabla de usuarios -->
+  <div class="table-card">
+
+    <div class="table-header">
+      <h2>Usuarios registrados</h2>
+      <span>{{ usuarios.length }} registros</span>
+    </div>
+
+    <div *ngIf="cargando" class="loading">
+      Cargando usuarios...
+    </div>
+
+    <div class="table-responsive" *ngIf="!cargando">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Rol</th>
+            <th *ngIf="authService.esAdministrador()">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <td>#{{ usuario.id }}</td>
+            <td class="username">{{ usuario.username }}</td>
+            <td>
+              <span class="role-badge">{{ usuario.rol }}</span>
+            </td>
+            <td class="actions" *ngIf="authService.esAdministrador()">
+            <button class="btn-edit"
+                (click)="editarUsuario(usuario)">
+                Editar
+            </button>
+
+            <button class="btn-delete"
+                (click)="eliminarUsuario(usuario)">
+                Eliminar
+            </button>
+            </td>
+          </tr>
+
+          <tr *ngIf="usuarios.length === 0">
+            <td colspan="4" class="empty">
+              No hay usuarios registrados.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

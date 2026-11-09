@@ -1,0 +1,176 @@
+
+.productos-container {
+  padding: 30px;
+  color: #1e293b;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.encabezado h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.encabezado p {
+  color: #64748b;
+  margin: 0;
+}
+
+.btn-agregar {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.panel {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.barra-busqueda {
+  margin-bottom: 20px;
+}
+
+.barra-busqueda input {
+  width: 100%;
+  max-width: 350px;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+}
+
+td {
+  font-size: 14px;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-editar, .btn-eliminar, .btn-cancelar {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.btn-eliminar {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.sin-datos {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+}
+
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 15px;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.modal input, .modal textarea {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font: inherit;
+}
+
+.modal textarea {
+  min-height: 75px;
+  resize: vertical;
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-cancelar {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.modal select {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: white;
+  font: inherit;
+  cursor: pointer;
+}

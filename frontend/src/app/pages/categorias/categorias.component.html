@@ -1,0 +1,118 @@
+<div class="categorias-container">
+
+  <div class="encabezado">
+    <div>
+      <h1>Categorías</h1>
+      <p>Organiza y administra las categorías de tu inventario.</p>
+    </div>
+
+    <button
+    class="btn-agregar"
+    *ngIf="authService.esAdministrador()"
+    (click)="nuevaCategoria()">
+    + Nueva categoría
+    </button>
+  </div>
+
+  <div class="panel">
+
+    <div class="barra-busqueda">
+      <input
+        type="text"
+        placeholder="Buscar categorías..."
+        [(ngModel)]="busqueda">
+    </div>
+
+    <div class="tabla-contenedor">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th *ngIf="authService.esAdministrador()">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let c of categoriasFiltradas">
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.descripcion || 'Sin descripción' }}</td>
+
+            <td class="acciones" *ngIf="authService.esAdministrador()">
+            <button
+                class="btn-editar"
+                (click)="editarCategoria(c)">
+                Editar
+            </button>
+
+            <button
+                class="btn-eliminar"
+                (click)="eliminarCategoria(c.id)">
+                Eliminar
+            </button>
+            </td>
+          </tr>
+
+          <tr *ngIf="categoriasFiltradas.length === 0">
+            <td
+            [attr.colspan]="authService.esAdministrador() ? 4 : 3"
+            class="sin-datos">
+              No hay categorías para mostrar.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+    <div
+    class="modal-fondo"
+    *ngIf="mostrarFormulario && authService.esAdministrador()">
+    <div class="modal">
+
+      <h2>
+        {{ modoEdicion ? 'Editar categoría' : 'Registrar categoría' }}
+      </h2>
+
+      <form (ngSubmit)="guardarCategoria()">
+
+        <label>Nombre</label>
+        <input
+          type="text"
+          name="nombre"
+          maxlength="100"
+          [(ngModel)]="categoria.nombre"
+          placeholder="Ej. Electrónica"
+          required>
+
+        <label>Descripción</label>
+        <textarea
+          name="descripcion"
+          maxlength="255"
+          [(ngModel)]="categoria.descripcion"
+          placeholder="Describe la categoría...">
+        </textarea>
+
+        <div class="modal-acciones">
+
+          <button
+            type="button"
+            class="btn-cancelar"
+            (click)="cancelarFormulario()">
+            Cancelar
+          </button>
+
+          <button type="submit" class="btn-agregar">
+            {{ modoEdicion ? 'Guardar cambios' : 'Registrar' }}
+          </button>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>

@@ -19,16 +19,23 @@ public class SecurityConfig {
             JwtFilter jwtFilter) throws Exception {
 
         http
-                .csrf(csrf -> csrf.disable())
                 .cors(cors -> {})
                 .csrf(csrf -> csrf.disable())
 
                 .sessionManagement(session ->
-                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                        session.sessionCreationPolicy(
+                                SessionCreationPolicy.STATELESS
+                        )
                 )
 
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/login").permitAll()
+
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                        .requestMatchers("/api/auth/login", "/api/auth/registro").permitAll()
+
+                        .requestMatchers(HttpMethod.GET, "/api/usuarios/**")
+                        .hasAuthority("SUPER-ADMIN-ROLE")
 
                         .requestMatchers(HttpMethod.GET, "/api/**")
                         .hasAnyAuthority("SUPER-ADMIN-ROLE", "USER")
@@ -40,7 +47,6 @@ public class SecurityConfig {
                 )
 
                 .httpBasic(basic -> basic.disable())
-
                 .formLogin(form -> form.disable())
 
                 .addFilterBefore(

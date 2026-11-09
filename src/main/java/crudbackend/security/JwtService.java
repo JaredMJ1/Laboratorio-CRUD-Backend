@@ -23,10 +23,11 @@ public class JwtService {
         );
     }
 
-    public String generarToken(String username) {
+    public String generarToken(String username, String rol) {
 
         return Jwts.builder()
                 .subject(username)
+                .claim("rol", rol)
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + 3600000))
                 .signWith(clave)
